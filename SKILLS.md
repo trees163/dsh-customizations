@@ -120,7 +120,7 @@
 
 | 变量 | 用途 | 配置位置 | 获取 |
 |---|---|---|---|
-| `VISION_API_KEY` + `VISION_BASE_URL` + `VISION_MODEL` | vision-tools 读图/OCR（当前配置：小米 MiMo，`https://api.xiaomimimo.com/v1`，`mimo-v2.5`） | `%LOCALAPPDATA%\agent-vision-toolkit\env` 或环境变量 | OpenAI 兼容接口，任意一家都行（DashScope/qwen-vl 等） |
+| `VISION_API_KEY` + `VISION_BASE_URL` + `VISION_MODEL` | vision-tools 读图/OCR（当前配置：小米 MiMo，`https://api.xiaomimimo.com/v1`，`mimo-v2.5`） | `%LOCALAPPDATA%\agent-vision-toolkit\env` 或环境变量 | [mimo.mi.com](https://mimo.mi.com)（小米 MiMo 开放平台）或任意 OpenAI 兼容服务（DashScope/qwen-vl 等） |
 | `AGNES_API_KEY`（或 `AGNES_API_TOKEN` / `APIHUB_AGNES_API_KEY`） | Agnes 文生图/视频（本仓库壁纸即用它生成） | 环境变量 | apihub.agnes-ai.com |
 
 ### 可选增强（不配 key 走默认路径）

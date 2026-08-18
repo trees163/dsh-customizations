@@ -31,6 +31,16 @@
 实测数据（同任务对照）：Flash vs 经典 **用时 -46%、推理 -41%、输出 token -24%、let me 轨迹 -56%**；
 Pro 锚定 A/B：we 轨迹 ×117/170、let me ×0、16/16 任务全过（we 触发率 ~25%，主因 Windows 环境 + 端到端口径，配置 100% 生效，不承诺 we 必现）。
 
+### 界面预览
+
+| 设置页（深色半透明 + 预设/外观管理） | 工作台（蓝幻皮肤 + 壁纸，三栏布局） |
+|---|---|
+| ![settings-dark](images/settings-dark.png) | ![workspace-blue](images/workspace-blue.png) |
+
+| 浅色布局（文件树/查看器/对话） | 对话界面（皮肤 + 输入区） |
+|---|---|
+| ![layout-light](images/layout-light.png) | ![chat-skin](images/chat-skin.png) |
+
 ### UI 插件
 
 - **dsh-client-ui-beauty**：9 套外观（鲸吟·蓝幻/雾蓝·极简/素白·明亮/樱绯·粉/青岚·碧/琥珀·金/紫罗兰/翡翠·绿/原生），后 5 套色相旋转自动生成；Agnes 鲸鱼娘壁纸 + 自定义壁纸**按皮肤独立记忆**；五根分区透明度拉条（面板/对话/工作/文件/阅读，0–200，100=当前观感，各带重置）；设置页 slots 卡片。全部效果挂在 `<html data-dsh-beauty>`，右下角 ◆ 胶囊即时开关，关闭即原生。
