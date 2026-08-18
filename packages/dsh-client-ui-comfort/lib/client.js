@@ -14,7 +14,7 @@
  *    the plugin itself is disabled in the Loader.
  */
 window.__ModuleLoader__.load({
-  id: '@deepseek-ai/dsh-client-ui-comfort',
+  id: 'dsh-client-ui-comfort',
   factory: () => {
     const exports = {}
     Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' })
@@ -22,7 +22,7 @@ window.__ModuleLoader__.load({
     const name = 'dsh-client-ui-comfort'
     const inject = []
     const STORE_KEY = 'dsh.comfort.v1.enabled'
-    const PLUGIN_ID = '@deepseek-ai/dsh-client-ui-comfort'
+    const PLUGIN_ID = 'dsh-client-ui-comfort'
 
     /**
      * The whole comfort stylesheet. Rules are gated on html[data-dsh-comfort]

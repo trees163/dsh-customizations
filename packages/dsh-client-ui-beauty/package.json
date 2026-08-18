@@ -1,7 +1,7 @@
 {
   "name": "dsh-client-ui-beauty",
   "description": "Beauty layer for the DSH Web UI: whale-art backdrop + scrim veil + translucent periwinkle token remap (coverage logic ported from dsh-web-ui blue-fantasy skin). 9 skins, per-skin wallpaper and per-region transparency sliders. Every rule is gated on <html data-dsh-beauty>; the in-UI pill toggles it, so off == the stock UI exactly.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
