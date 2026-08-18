@@ -4,6 +4,9 @@
 编译产物的修改副本。**升级 `npm update -g @deepseek-ai/dsh` 后必须重打**；补丁按当前版本制作，
 版本不同可能部分失效。
 
+> 版权：原包为 [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)
+> 的一部分，MIT 许可，Copyright (c) DeepSeek。本目录为修改副本，仅作补丁重放用途。
+
 ## 补丁清单（16 个包）
 
 ### 图片入站桥接（VS Code 布局配套，15 包）

@@ -1,4 +1,4 @@
-# ============================================================
+﻿# ============================================================
 #  dsh-customizations 一键安装脚本（Windows）
 #  用法：powershell -ExecutionPolicy Bypass -File .\install.ps1
 #  自动完成：装插件 → 打官方包补丁 → 合并 cordis.patch.yml → 装预设 → 装工具脚本

@@ -107,7 +107,6 @@ powershell -ExecutionPolicy Bypass -File .\install.ps1
 ### 方式二：npm（推荐 UI 层）
 
 ```powershell
-npm login                      # 一次性
 dsh plugin --profile web add dsh-client-ui-comfort
 dsh plugin --profile web add dsh-client-ui-beauty
 dsh plugin --profile web add dsh-host-files
