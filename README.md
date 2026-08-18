@@ -40,6 +40,30 @@ Pro 锚定 A/B：we 轨迹 ×117/170、let me ×0、16/16 任务全过（we 触�
 
 list / read（docx/xlsx/pptx 自动转 HTML 预览）/ image / raw / doc / legacy（WPS COM）/ reveal（资源管理器定位）/ search / highlight（服务端 shiki）/ git / write / mkdir / mkfile / rename / delete（送回收站）/ persona（全局人设）/ skills / mcp——详见改造记录 §3.1.1。
 
+### MCP 全清单
+
+**DSH 侧（本仓库桥接，`mcp-bridge.mjs` 管理）**：
+
+| 服务器 | 前缀 | 功能 | Key |
+|---|---|---|---|
+| playwriter | `pw_*` | 浏览器自动化（操控 Chrome） | 零 key |
+| codegraph | `cg_*` | 代码图谱（符号上下文/调用链） | 零 key |
+| github | `gh_*` | GitHub API（26 工具） | `GITHUB_PERSONAL_ACCESS_TOKEN`（运行时读 `DSH_REASONIX_CONFIG`） |
+| exa | `exa_*` | 网页搜索/全文抓取 | `EXA_API_KEY`（可选） |
+
+**Reasonix 侧（本地注册，不在本仓库）**：`config.toml` 的 `[[plugins]]` 段注册了 10 个本地 MCP
+（exa / playwriter / github / filesystem / git / memory / sequential-thinking / fetch /
+skillspector / ai-music）。其中 ai-music 为本地免费音乐生成（torch CPU 本地推理，8 工具），
+依赖本地 Python 环境与模型缓存，无法随仓库分发；其余为官方 MCP 服务器（npm 包名注册）。
+这些属于 Reasonix 宿主环境的本地配置，本仓库只桥接不复制。
+
+### 桌面快捷方式启动（launcher）
+
+`tools/launcher/` 提供 IDE 启动器：双击 **「启动 dsh IDE.vbs」** 无控制台闪窗启动
+（自动探测 3080 端口 → 没跑则隐藏拉起 `dsh web` → 用 Edge `--app` 模式开独立窗口 1600×950）；
+**「停止 dsh web.vbs」** 按端口精准结束服务。想放桌面：把 `tools/launcher/` 拷到
+`~/.dsh/launcher/`，右键「启动 dsh IDE.vbs」→ 发送到 → 桌面快捷方式。
+
 ---
 
 ## 仓库结构
@@ -54,7 +78,7 @@ presets/                  三模式 agent 预设（自包含，复制即装）
 patches/
   cordis.patch.yml        profiles 补丁层（插件激活入口）
   node_modules/@deepseek-ai/  16 个官方包补丁副本（见 patches/README.md 重打清单）
-tools/                    文档转换（docx/xlsx/pptx→HTML、WPS COM）、拖拽注入脚本
+tools/                    文档转换（docx/xlsx/pptx→HTML、WPS COM）、拖拽注入脚本、launcher（桌面快捷方式启动）
 docs/                     改造全记录（改了什么/怎么做的/参考了谁）
 SKILLS.md                 71 个技能清单（来源/许可/API）
 ```

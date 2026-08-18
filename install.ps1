@@ -74,11 +74,15 @@ Get-ChildItem (Join-Path $here 'presets') -Directory | ForEach-Object {
     }
 }
 
-# 6) 工具脚本 -> ~/.dsh/
+# 6) 工具脚本 -> ~/.dsh/（含 launcher 桌面快捷方式启动）
 Get-ChildItem (Join-Path $here 'tools') -File | ForEach-Object {
     Copy-Item $_.FullName (Join-Path $env:USERPROFILE '.dsh') -Force
 }
-Write-Host '[5/5] 工具脚本已复制（vscode-doc-convert.py / vscode-wps-convert.ps1 / rx-drop-widget.js）'
+$launcherSrc = Join-Path $here 'tools\launcher'
+if (Test-Path $launcherSrc) {
+    Copy-Item $launcherSrc (Join-Path $env:USERPROFILE '.dsh\launcher') -Recurse -Force
+}
+Write-Host '[5/5] 工具脚本已复制（vscode-doc-convert.py / vscode-wps-convert.ps1 / rx-drop-widget.js / launcher）'
 
 Write-Host ''
 Write-Host '===== 安装完成！启动方式 ====='
