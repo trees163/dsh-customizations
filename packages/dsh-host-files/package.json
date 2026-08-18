@@ -1,0 +1,31 @@
+{
+  "name": "dsh-host-files",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "description": "Host-side file API for the DSH Web UI: ~19 /vscode-files/* endpoints (list/read/write/search/highlight/docx preview/git status/persona/skills/mcp management). Fork of @anoslide/dsh-host-files with heavy second development.",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "file-api",
+    "docx",
+    "shiki"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trees163/dsh-customizations.git"
+  }
+}

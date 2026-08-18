@@ -1,0 +1,9 @@
+# npm distribution patch layer: registers the Beauty client plugin into the
+# profile's browser roster. Installing the npm package with
+#   dsh plugin --profile web add dsh-client-ui-beauty
+# pulls this patch into the profile's layer stack. If you already inserted
+# `ui-beauty` manually in your profile's cordis.patch.yml, keep only one of
+# the two (the insert id must stay unique).
+- insert:
+    - id: ui-beauty
+      name: 'dsh-client-ui-beauty'

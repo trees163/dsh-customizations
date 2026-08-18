@@ -1,0 +1,42 @@
+# NOTICE — Third-party attributions
+
+This repository combines original work with code and mechanisms derived from
+third-party open-source projects. All third-party licenses are retained.
+
+## Code derived from
+
+- **anoslide/dsh-vscode-layout** (MIT, Copyright (c) 2026 anoslide)
+  `packages/dsh-client-vscode-layout` and `packages/dsh-host-files` are forks
+  of this repository's `plugins/` with heavy second development. The original
+  license is reproduced in `LICENSE-anoslide.txt`.
+- **deepseek-ai/deepseek-harness** (MIT)
+  `presets/*/agent.cordis.yml` are derived from the official Standard preset
+  composition. The original DeepSeek copyright and MIT notice apply to those
+  derived files.
+- **zhu1090093659/dsh-web-ui** (Apache-2.0)
+  The token-remap coverage logic of the blue-fantasy skin was ported into
+  `packages/dsh-client-ui-beauty` (art direction by the powerdog996 /
+  DreamSkin community). The Apache-2.0 notice applies to the ported logic.
+- **WYH66666666/DSH-Transparent-UI-Plugin** (Aqua, MIT)
+  The `data-*` attribute gating / plug-and-unplug plugin shape and some CSS
+  recipes were borrowed for both UI plugins.
+- **xiaobright/dsh-anchored-standard** (MIT)
+  The two-phase anchoring mechanism behind `presets/reasonix-anchored`.
+- **yjh051108/dsh-router-standard** (dsh-routing-suite)
+  The flash-persona routing idea behind `presets/reasonix-flash/model-router.mjs`.
+- **Anionex/agent-vision-toolkit** (MIT)
+  `presets/*/plugins/base-tools.mjs` shells out to the vision-tools CLI from
+  this toolkit (`~/.reasonix/skills/vision-tools`).
+
+## Patches
+
+`patches/node_modules/@deepseek-ai/*` contains modified copies of official
+DeepSeek Harness packages (image inbound bridging, preset-selection semantics
+fix). They are derived from the official packages; see
+`patches/README.md` for the re-apply checklist. They may break when the
+harness version changes.
+
+## Artwork
+
+The bundled wallpaper art in `dsh-client-ui-beauty` was generated via the
+Agnes image API for this project.

@@ -1,0 +1,22 @@
+# Your patch layer for this dsh profile, applied after every bundle layer:
+# a top-level YAML array of loader patch entries (id-targeted config
+# overrides, disables, and insert lists; `!!js` expressions allowed).
+
+# ---- VS Code 布局魔改：文件树/查看器/全局人设/MCP 管理的宿主接口 ----
+- insert:
+    - id: vscode-host-files
+      name: 'dsh-host-files'
+
+# ---- Comfort 层：过渡动效 / 输入卡与统计融合 / 工具卡自动收起 ----
+# 全部效果挂在 <html data-dsh-comfort> 上；界面右下角悬浮胶囊可即时开关，
+# 停用后完全还原原生界面。彻底停用：删掉本 insert 块并重启 dsh web。
+- insert:
+    - id: ui-comfort
+      name: '@deepseek-ai/dsh-client-ui-comfort'
+
+# ---- Beauty 层：鲸鱼娘壁纸 + 纱罩 + 半透明 token 重映射（蓝幻皮肤覆盖逻辑） ----
+# 全部效果挂在 <html data-dsh-beauty> 上；右下角第二个悬浮胶囊（◆）可即时开关。
+# 彻底停用：删掉本 insert 块并重启 dsh web。
+- insert:
+    - id: ui-beauty
+      name: '@deepseek-ai/dsh-client-ui-beauty'

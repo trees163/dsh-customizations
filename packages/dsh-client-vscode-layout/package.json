@@ -1,0 +1,46 @@
+{
+  "name": "dsh-client-vscode-layout",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-theme"
+      ],
+      "platform": "web"
+    }
+  },
+  "description": "VS Code style layout for the DSH Web UI: left file/session split, center tabs + read-only viewer, right chat/detail tabs. Fork of @anoslide/dsh-client-vscode-layout with heavy second development (file tree, drag & drop, in-page previews, editor mode).",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "vscode-layout",
+    "file-tree"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trees163/dsh-customizations.git"
+  }
+}

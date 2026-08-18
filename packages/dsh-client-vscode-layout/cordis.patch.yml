@@ -1,0 +1,8 @@
+# npm distribution patch layer: registers the VS Code layout client plugin
+# into the profile's browser roster. Install the host-side package too:
+#   dsh plugin --profile web add dsh-host-files
+# The layout client renders the file tree / viewer / editor chrome; the host
+# package serves the /vscode-files/* API it talks to.
+- insert:
+    - id: vscode-layout
+      name: 'dsh-client-vscode-layout'

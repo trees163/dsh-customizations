@@ -1,0 +1,2 @@
+name: Flash 闪光模式
+description: 经典模式 + 模型感知路由：flash 系模型自动切换社区实测 WEAK_FLASH persona（neutral + classify + recall/anti-runaway 锚，含"禁止环境探测/先深想后产出"），工具目录全量直出（无两阶段引导）；pro 等其它模型不干预、行为同经典模式。建议搭配 deepseek-v4-flash + 推理等级 HIGH/MAX（DEFAULT 实测会退化为 Let me 轨迹）。桥接生态全量保留。

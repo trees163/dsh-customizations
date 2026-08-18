@@ -1,0 +1,2 @@
+name: Pro 调整模式
+description: 极简锚定引导 + 全量标准与 Reasonix 桥接生态。首请求仅暴露 Minimal 原生工具对（persistent bash + str_replace_editor）且不注入技能目录/AGENTS.md 摘要；首次工具调用或首次回复后提升为全量目录（标准 25 工具 + Reasonix 技能桥 / 基础工具 time_now context7 memory vision_glance / MCP 桥 pw_* cg_* gh_* exa_* / 拖拽）。专配 deepseek-v4-pro（推理等级 MAX）：A/B 实测 we 轨迹、let me 0、输出省约 25%。

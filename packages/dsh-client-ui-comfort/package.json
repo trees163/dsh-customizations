@@ -1,0 +1,43 @@
+{
+  "name": "dsh-client-ui-comfort",
+  "description": "Comfort layer for the DSH Web UI: gentler phase/composer transitions, fused composer+stats card, auto-collapsed tool cards. Every rule is gated on <html data-dsh-comfort>; the in-UI pill toggles that attribute, so off == the stock UI exactly.",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "ui"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trees163/dsh-customizations.git"
+  }
+}

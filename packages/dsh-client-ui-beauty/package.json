@@ -1,0 +1,52 @@
+{
+  "name": "dsh-client-ui-beauty",
+  "description": "Beauty layer for the DSH Web UI: whale-art backdrop + scrim veil + translucent periwinkle token remap (coverage logic ported from dsh-web-ui blue-fantasy skin). 9 skins, per-skin wallpaper and per-region transparency sliders. Every rule is gated on <html data-dsh-beauty>; the in-UI pill toggles it, so off == the stock UI exactly.",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "ui",
+    "theme",
+    "skin",
+    "wallpaper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trees163/dsh-customizations.git"
+  }
+}

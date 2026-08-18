@@ -1,0 +1,7 @@
+# npm distribution patch layer: registers the host-side file API plugin
+# (the /vscode-files/* endpoints) into the profile. Install together with
+# the layout client:
+#   dsh plugin --profile web add dsh-client-vscode-layout
+- insert:
+    - id: vscode-host-files
+      name: 'dsh-host-files'
