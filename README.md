@@ -133,17 +133,38 @@ Copy-Item -Recurse .\presets\reasonix-anchored $target
 
 docx 预览依赖：`pip install python-docx openpyxl`（pptx 需 `python-pptx`，见 tools/vscode-doc-convert.py）。
 
-## API 清单（用户自备）
+## 使用说明（装完怎么用）
 
-| 组 | 变量 | 用途 |
-|---|---|---|
-| 核心 | `VISION_API_KEY` + `VISION_BASE_URL` + `VISION_MODEL` | 读图/OCR（当前：小米 MiMo `mimo-v2.5`，OpenAI 兼容，可换任意家） |
-| 核心 | `AGNES_API_KEY` | Agnes 文生图/视频（壁纸生成） |
-| 桥接 | `GITHUB_PERSONAL_ACCESS_TOKEN` | github MCP（运行时从 `DSH_REASONIX_CONFIG` 读取，或 GitHub CLI 登录） |
-| 桥接 | `EXA_API_KEY` | exa 网页搜索 MCP（可选；playwriter/codegraph 零 key） |
-| 可选 | `SUNO_API_KEY` / `UDIO_API_KEY` / `GOOGLE_API_KEY` | 音乐生成 |
-| 可选 | `{PROVIDER}_API_KEY`（OPENAI/GEMINI/QWEN/ZHIPU/MINIMAX 等） | ppt-master 生图/旁白 |
-| 可选 | `PEXELS_API_KEY` / `PIXABAY_API_KEY` | ppt-master 配图搜索 |
+1. **预设**：重启 dsh → 新建空白会话 → 会话设置里选预设——经典（reasonix）/ Pro 调整（reasonix-anchored）/ Flash 闪光（reasonix-flash）。Pro 适合深度任务（配 v4-pro + MAX），Flash 适合 fix/复杂任务（配 v4-flash + HIGH/MAX）。
+2. **UI 皮肤**：界面右下角 **◆ 胶囊**打开皮肤菜单（9 套外观 + 自定义壁纸 + 五根透明度拉条），设置页「常规」底部有 Beauty 卡片（透明度/壁纸，每个皮肤独立记忆）；**另一个胶囊**开关舒适层（输入/统计融合、动效）。
+3. **文件系统**：左栏文件树（右键：打开/资源管理器定位/复制路径/重命名/删除）、双击文件在中间查看器预览（代码高亮/docx 转换/图片）、工具栏 📂👁✏️➕🔍、文件树拖路径进输入框、设置→全局人设/Skill 管理/MCP 管理。
+4. **桥接工具**：装完后 `bridge_status` 可查 playwriter/codegraph/github/exa 四实例状态；技能通过 skill 工具按需加载（SKILLS.md 全清单）；记忆工具 time_now/context7/memory_save/memory_search 直接可用。
+5. **改代码后**：改客户端插件 bundle 必须 **Ctrl+Shift+R 强刷**（普通刷新命中浏览器缓存会"改了没生效"）。
+
+## API 接口清单与配置（用户自备）
+
+> 全部为可选接入：不配 key 时 UI/布局/预设照常工作，只有对应功能（读图/搜索/MCP）不可用。
+
+| 组 | 变量 | 用途 | 申请地址 | 配置位置 |
+|---|---|---|---|---|
+| 核心 | `VISION_API_KEY` + `VISION_BASE_URL` + `VISION_MODEL` | 读图/OCR（当前：小米 MiMo `mimo-v2.5`；OpenAI 兼容接口，可换任意家） | 小米开放平台 MiMo API（或任意 OpenAI 兼容服务） | `%LOCALAPPDATA%\agent-vision-toolkit\env`（格式见下） |
+| 核心 | `AGNES_API_KEY` | Agnes 文生图/视频（壁纸生成） | apihub.agnes-ai.com | 环境变量（`AGNES_API_TOKEN` / `APIHUB_AGNES_API_KEY` 任一亦可） |
+| 桥接 | `GITHUB_PERSONAL_ACCESS_TOKEN` | github MCP（26 工具） | github.com/settings/tokens（classic 勾 repo 或 fine-grained 勾 Contents 读写） | `DSH_REASONIX_CONFIG` 指向的 toml（默认 `~/AppData/Roaming/reasonix/config.toml`） |
+| 桥接 | `EXA_API_KEY` | exa 网页搜索 MCP（可选） | exa.ai | 环境变量 `EXA_API_KEY` |
+| 可选 | `SUNO_API_KEY` / `UDIO_API_KEY` / `GOOGLE_API_KEY` | 音乐生成（Lyria/Suno/Udio） | suno.com / udio.com / aistudio.google.com | 环境变量 |
+| 可选 | `{PROVIDER}_API_KEY`（OPENAI/GEMINI/QWEN/ZHIPU/MINIMAX 等） | ppt-master 生图/旁白 | 各厂商控制台 | 环境变量或 `~/.ppt-master/.env` |
+| 可选 | `PEXELS_API_KEY` / `PIXABAY_API_KEY` | ppt-master 配图搜索 | pexels.com/api / pixabay.com/api | 环境变量 |
+
+`%LOCALAPPDATA%\agent-vision-toolkit\env` 文件格式（MiMo 示例）：
+
+```ini
+VISION_API_KEY=sk-你的key
+VISION_BASE_URL=https://api.xiaomimimo.com/v1
+VISION_MODEL=mimo-v2.5
+LANG=zh
+```
+
+> 注意：**本仓库不含任何真实 key**。github token 是运行时从用户自己的 `config.toml` 读取的（`mcp-bridge.mjs` 只读 `GITHUB_PERSONAL_ACCESS_TOKEN` 键）；其余全部走环境变量。
 
 全部技能级 API 明细见 [SKILLS.md](SKILLS.md)。
 
