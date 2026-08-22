@@ -19,7 +19,7 @@
 - `dsh-command-compact` / `dsh-command-feedback` / `dsh-command-goal` — 命令层放行图片入站
 - `dsh-host-apiproxy` — 附件上传/落盘通道
 - `dsh-host-directory-picker-native` — 目录选择器适配
-- `dsh-llm-deepseek` / `dsh-llm-pi-ai` — 多模态消息序列化（图片转文本描述）；**`dsh-llm-deepseek` 另含模型目录补丁：新增 `deepseek-v4-flash-vision-exp`（官方 2026-08-21 上线，设置里可选）**
+- `dsh-llm-deepseek` / `dsh-llm-pi-ai` — 多模态消息序列化（图片转文本描述）
 - `dsh-permission-presets` / `dsh-plan-mode` / `dsh-session-log-export` — 权限/计划/导出适配
 - `dsh-tool-fs` — 文件工具适配
 - `dsh-web-app` / `dsh-web-frontend` — Web 壳与入口适配
